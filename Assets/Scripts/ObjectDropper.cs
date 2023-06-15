@@ -17,7 +17,7 @@ public class ObjectDropper : MonoBehaviour
         if (Time.time - lastDropTime >= dropInterval)
         {
             // Check if the drop key is pressed
-            if (Input.GetKeyDown(dropKey))
+            if (Input.GetKeyDown(dropKey) || Input.GetAxis("drop") > 0)
             {
                 lastDropTime = Time.time;
 

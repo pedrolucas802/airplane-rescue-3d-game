@@ -1,8 +1,10 @@
 using UnityEngine;
 using TMPro;
-
+using UnityEngine;
+using UnityEngine.SceneManagement;
 public class ScoreSystem : MonoBehaviour
 {
+    [SerializeField]private string MainMenu;
     public TextMeshProUGUI scoreText; // Reference to the TextMeshProUGUI component for score display
     private int score = 0; // Current score
     private bool gameEnded = false; // Flag to indicate if the game has ended
@@ -19,7 +21,8 @@ public class ScoreSystem : MonoBehaviour
         if (score == 5 && !gameEnded)
         {
             // Call the game over function
-            GameOver();
+            SceneManager.LoadScene(MainMenu);
+            
         }
     }
 
@@ -38,7 +41,14 @@ public class ScoreSystem : MonoBehaviour
         gameEnded = true;
 
         // Close the game
-        QuitGame();
+        // Get the current active scene
+        Scene currentScene = SceneManager.GetActiveScene();
+
+    // Close the current scene asynchronously
+        SceneManager.UnloadSceneAsync(currentScene);
+
+    // Load the main menu scene
+        SceneManager.LoadScene("MainMenu");
     }
 
     private void QuitGame()
@@ -54,6 +64,6 @@ public class ScoreSystem : MonoBehaviour
     private void Start()
     {
         // Start a timer to call GameOver after 2 minutes
-        Invoke("GameOver", 120f);
+        Invoke("GameOver", 600f);
     }
 }

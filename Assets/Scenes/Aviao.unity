@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028305, g: 0.22571313, b: 0.3069213, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1505,6 +1505,7 @@ GameObject:
   - component: {fileID: 818154767}
   - component: {fileID: 818154766}
   - component: {fileID: 818154770}
+  - component: {fileID: 818154771}
   m_Layer: 0
   m_Name: Plane
   m_TagString: aircraft
@@ -1596,6 +1597,20 @@ MonoBehaviour:
   dropInterval: 2
   dropKey: 102
   dropDistance: 5
+--- !u!114 &818154771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 818154765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a82c208cced2452082f3df6df0e3847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioClip: {fileID: 8300000, guid: 3134b8636b96941b6b783fc156d5d986, type: 3}
+  outputMixerGroup: {fileID: 0}
 --- !u!1 &861103799
 GameObject:
   m_ObjectHideFlags: 0
