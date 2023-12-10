@@ -7,7 +7,7 @@ public class PlaneController : MonoBehaviour
 {
   [Header("Plane Stats")]
   [Tooltip("How much the throttle ramps up or down.")]
-  public float throttleIncrement = 0.1f;
+  public float throttleIncrement = 0.01f;
   [Tooltip("Maximum engine thrust when at 100% throttle.")]
   public float maxThrust = 75f;
   [Tooltip("How responsive the plane is when rolling, pitching and yawing.")]
@@ -46,13 +46,14 @@ public class PlaneController : MonoBehaviour
     float thrustInput = Input.GetAxis("Thrust"); //velocidade
 
     // Handle throttle value being sure to clamp it between 0 and 100.
-    // if (Input.GetKey(KeyCode.Space)) throttle += throttleIncrement;
-    // else if (Input.GetKey(KeyCode.B) && (throttle >= 25 || transform.position.y <= 1)) throttle -= throttleIncrement;
-    // throttle = Mathf.Clamp(throttle, 0f, 100f);
-
-    if (thrustInput > 0) throttle += throttleIncrement;
-    else if (thrustInput < 0) throttle -= throttleIncrement;
+    if (Input.GetKey(KeyCode.Space)) throttle += throttleIncrement;
+    else if (Input.GetKey(KeyCode.B) && (throttle >= 25 || transform.position.y <= 1)) throttle -= throttleIncrement;
     throttle = Mathf.Clamp(throttle, 0f, 100f);
+
+
+    // if (thrustInput > 0 || Input.GetKey(KeyCode.Space) throttle += throttleIncrement;
+    // else if (thrustInput < 0 || Input.GetKey(KeyCode.N)) throttle -= throttleIncrement;
+    // throttle = Mathf.Clamp(throttle, 0f, 100f);
   }
 
   private void Update()
@@ -72,6 +73,9 @@ public class PlaneController : MonoBehaviour
     rb.AddTorque(-transform.forward * roll * responseModifier);
 
     rb.AddForce(Vector3.up * rb.velocity.magnitude * lift);
+
+
+    
   }
 
   private void UpdateHUD()
