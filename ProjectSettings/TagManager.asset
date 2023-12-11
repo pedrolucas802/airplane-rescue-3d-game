@@ -9,6 +9,7 @@ TagManager:
   - ObjectDropper
   - Heliport
   - Box
+  - Propeller
   layers:
   - Default
   - TransparentFX
