@@ -7,11 +7,11 @@ public class PlaneController : MonoBehaviour
 {
   [Header("Plane Stats")]
   [Tooltip("How much the throttle ramps up or down.")]
-  public float throttleIncrement = 0.01f;
+  public float throttleIncrement = 0.02f;
   [Tooltip("Maximum engine thrust when at 100% throttle.")]
   public float maxThrust = 75f;
   [Tooltip("How responsive the plane is when rolling, pitching and yawing.")]
-  public float responsiveness = 10f;
+  public float responsiveness = 20f; 
 
   [Tooltip("How much lift force the plane generates as it gains speed.")]
   public float lift = 50f;
