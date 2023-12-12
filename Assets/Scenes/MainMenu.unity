@@ -3114,7 +3114,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -3604,8 +3604,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce9d916284dae84f87a4a82385694f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorial1: Aviao
-  tutorial2: AviaoRings
+  jogo1: AviaoRings
+  jogo2: Aviao
   painelMenu: {fileID: 727701680}
   painelOpcoes: {fileID: 492928772}
   painelMapa: {fileID: 1923102540}

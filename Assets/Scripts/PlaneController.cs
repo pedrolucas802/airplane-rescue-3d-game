@@ -38,7 +38,7 @@ public class PlaneController : MonoBehaviour
   private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        propeller = GameObject.FindGameObjectWithTag("Propeller").transform;
+        // propeller = GameObject.FindGameObjectWithTag("Propeller").transform;
         animator = GetComponentInChildren<Animator>(); // Use GetComponentInChildren if the Animator is a child
 
         if (propeller == null)

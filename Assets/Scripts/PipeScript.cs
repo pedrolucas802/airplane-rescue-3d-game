@@ -30,35 +30,3 @@ public class PipeScript : MonoBehaviour
     }
 }
 }
-
-
-// using UnityEngine;
-// using TMPro;
-
-// public class PipeScript : MonoBehaviour
-// {
-//     public TextMeshProUGUI scoreText;
-//     private int score = 0;
-
-//     private void OnTriggerEnter(Collider other)
-//     {
-//         if (other.CompareTag("Player"))
-//         {
-//             UpdateScore();
-//             Debug.Log("Triggered Player");
-//         }else{
-//              Debug.Log("Triggered");
-//         }
-//     }
-
-//     private void UpdateScore()
-//     {
-//         // Increment the score
-//         score++;
-
-    
-//         scoreText.text = "Score: " + score.ToString();
-//     }
-
-
-// }
