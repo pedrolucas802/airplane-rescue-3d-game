@@ -15,7 +15,7 @@ public class PipeScript : MonoBehaviour
 
         if (scoreSystem != null)
         {
-            scoreSystem.UpdateScore();
+            scoreSystem.UpdateScore(1);
             Debug.Log("ScoreSystem found and score updated");
             Destroy(gameObject);
         }

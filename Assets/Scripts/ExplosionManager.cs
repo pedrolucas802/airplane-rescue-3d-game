@@ -7,9 +7,14 @@ public class ExplosionManager : MonoBehaviour
 {
     void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("pipe"))
+        Debug.Log("explode manager");
+
+        if (other.CompareTag("pipe") || other.CompareTag("rescue"))
         {
-            Debug.Log("explode!");
+            Debug.Log("DONT explode!");
+
+        }else{
+             Debug.Log("explode!");
 
             // Find and play the explosion GameObject
             GameObject explosionObject = GameObject.FindWithTag("explosion");

@@ -7,9 +7,22 @@ public class MenuPrincipalManager : MonoBehaviour
 {
    [SerializeField] private string jogo1;
    [SerializeField] private string jogo2;
+   [SerializeField] private string jogo3;
    [SerializeField] private GameObject painelMenu;
    [SerializeField] private GameObject painelOpcoes;
    [SerializeField] private GameObject painelMapa;
+             private float esc;
+
+
+  private void Update()
+    {
+
+       esc = Input.GetAxis("esc");
+      if(esc > 0){
+         SceneManager.LoadScene("MainMenu");
+      }
+
+   }
 
    public void Jogar()
    {
@@ -17,14 +30,19 @@ public class MenuPrincipalManager : MonoBehaviour
       painelMapa.SetActive(true);
    }
 
-   public void MapaAviao()
+   public void Tutorial()
    {
       SceneManager.LoadScene(jogo1);
    }
 
-   public void MapaHelicoptero()
+   public void Desafio()
    {
       SceneManager.LoadScene(jogo2);
+   }
+  
+   public void Rescue()
+   {
+      SceneManager.LoadScene(jogo3);
    }
 
    public void AbrirOpcoes()

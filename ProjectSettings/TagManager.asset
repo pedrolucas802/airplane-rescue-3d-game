@@ -15,6 +15,7 @@ TagManager:
   - plane
   - pipe
   - explosion
+  - rescue
   layers:
   - Default
   - TransparentFX

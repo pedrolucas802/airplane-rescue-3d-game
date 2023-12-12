@@ -10,40 +10,32 @@ public class ScoreSystem : MonoBehaviour
     public TextMeshProUGUI scoreText;
     private int score = 0;
     private bool gameEnded = false;
-    private float timerDuration = 180f; // 3 minutes in seconds
+    private float timerDuration = 540f; // 3 minutes in seconds
 
-    private void Update()
+   private void Update()
     {
-    
-            timerDuration -= Time.deltaTime;
-Debug.Log("timerDuration");
-Debug.Log(timerDuration);
-            if (timerDuration < 2)
-            {
-                GameOver();
-            }else{
-                UpdateScoreText();
-            }
+        timerDuration -= Time.deltaTime;
 
+        if (timerDuration < 2)
+        {
+            GameOver();
+        }
+        
+        UpdateScoreText();
 
-            if (score > 5)
-            {
-                WinGame();
-            }else{
-                UpdateScoreText();
-            }
-
+        if (score > 5)
+        {
+            WinGame();
+        }
         
     }
 
-    public void UpdateScore()
+    public void UpdateScore(int addition)
     {
-        if (!gameEnded) // Check if the game hasn't ended yet
-        {
-            score++;
-            Debug.Log("score: " + score);
-            Debug.Log("gameEnded: " + gameEnded);
-        }
+
+        score= score + addition;
+        Debug.Log("Score: "+ score);
+
     }
 
     private void UpdateScoreText()
@@ -53,7 +45,7 @@ Debug.Log(timerDuration);
 
         string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
 
-        scoreText.text = "Time:" + timeString + "/ Score: " + score.ToString();
+        scoreText.text = "Time:" + timeString + " / Score: " + score;
     }
 
     private void GameOver()
@@ -71,7 +63,8 @@ Debug.Log(timerDuration);
         scoreText.text = "You Win!";
         gameEnded = true;
 
-        StartCoroutine(ReloadScene(5f));
+        StartCoroutine(ReloadSceneMainMenu(2.5f));
+
     }
 
     private void QuitGame()
@@ -97,4 +90,13 @@ Debug.Log(timerDuration);
         Scene currentScene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(currentScene.name);
     }
+
+    IEnumerator ReloadSceneMainMenu(float delay)
+{
+    // Wait for the specified duration
+    yield return new WaitForSeconds(delay);
+
+    // Reload the main menu scene
+    SceneManager.LoadScene(mainMenuSceneName);
+}
 }

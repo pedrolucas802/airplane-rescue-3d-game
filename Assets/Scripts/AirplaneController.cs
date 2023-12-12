@@ -48,6 +48,10 @@ public class AirplaneController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(0);
