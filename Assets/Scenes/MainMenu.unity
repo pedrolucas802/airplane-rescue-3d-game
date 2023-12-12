@@ -3605,7 +3605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tutorial1: Aviao
-  tutorial2: 
+  tutorial2: AviaoRings
   painelMenu: {fileID: 727701680}
   painelOpcoes: {fileID: 492928772}
   painelMapa: {fileID: 1923102540}
