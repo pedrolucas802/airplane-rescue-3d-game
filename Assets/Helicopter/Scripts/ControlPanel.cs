@@ -46,6 +46,12 @@ public class ControlPanel : MonoBehaviour {
 	
 	}
 
+    void Update(){
+        if(InputManager.instance.inputActions.FlyHelicopter.UpAction.WasPressedThisFrame()){
+            Debug.Log("UPPPPS");
+        }
+    }
+
 	void FixedUpdate ()
 	{
 	    var pressedKeyCode = new List<PressedKeyCode>();
