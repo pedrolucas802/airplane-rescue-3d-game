@@ -1,0 +1,235 @@
+{
+    "name": "inputActions",
+    "maps": [
+        {
+            "name": "FlyHelicopter",
+            "id": "4271eecd-9f70-46c3-b3d6-8ed7980876c1",
+            "actions": [
+                {
+                    "name": "UpAction",
+                    "type": "Button",
+                    "id": "b818e2ff-e5db-4cee-b076-cba7489aaf83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "DownAction",
+                    "type": "Button",
+                    "id": "d45f3024-cc49-465b-b6cb-75077dce76f3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ForwardAction",
+                    "type": "Button",
+                    "id": "b141addb-ded4-4436-9817-a97fefa27071",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Back",
+                    "type": "Button",
+                    "id": "0e1e0015-fcb7-4fef-9fb2-54b4167e2142",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Left",
+                    "type": "Button",
+                    "id": "a2eca0dd-0892-4f77-8d64-67c98d6d8a5e",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Right",
+                    "type": "Button",
+                    "id": "a2c39aa1-86c1-4d8d-ac6b-7f264b68b8cd",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TurnLeft",
+                    "type": "Button",
+                    "id": "dad2b2b2-01ab-4bbd-adb7-e8d65caf1a83",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TurnRight",
+                    "type": "Button",
+                    "id": "3dee624b-321f-40bc-a7c9-cfb942477023",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bda9355a-1a08-4a25-9929-692e24c678ab",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "UpAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea3679a2-9852-4b44-80e3-62a35d8b3ccc",
+                    "path": "<Keyboard>/shift",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "UpAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09da0bf5-f255-4230-9eb8-e8d9a7034eea",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/button8",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "DownAction",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "a94f4ea7-ea13-4485-8126-1afd9319f0af",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ForwardAction",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "b345bf1b-afe8-408d-b81d-c2c5bfb484a4",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "ForwardAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "d396473b-512b-420b-8db6-940d96e6f5b8",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/up",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "ForwardAction",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "0e69ef49-bcf3-4e1d-b407-f3859a40dc62",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "Back",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "408aa9d2-9a30-45d1-b3f0-9791ecbb344b",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "Left",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "f3d20aac-86e1-4dca-8936-3e913194f691",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Right",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "c3b67634-6e21-41d7-8cab-4d34949cba49",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "Right",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "c6688078-0cfc-45d2-8d23-61619d999d50",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/stick/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "Right",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e777644e-0889-4217-8ccb-1cfe01ca6aa2",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/hat/left",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "TurnLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7621d78d-590b-49f3-8364-659fbbc46d1c",
+                    "path": "<HID::Thrustmaster T.Flight Hotas X>/hat/right",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "manche",
+                    "action": "TurnRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "manche",
+            "bindingGroup": "manche",
+            "devices": []
+        }
+    ]
+}

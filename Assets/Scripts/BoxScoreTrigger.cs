@@ -16,7 +16,7 @@ public class BoxScoreTrigger : MonoBehaviour
         if (heliport != null && !heliport.HasScored())
         {
             // Increment the score by 1
-            scoreSystem.UpdateScore();
+            scoreSystem.UpdateScore(1);
 
             // Set the heliport as scored
             heliport.SetScored(true);

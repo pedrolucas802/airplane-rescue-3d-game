@@ -34,4 +34,22 @@ public class AudioPlayer : MonoBehaviour
             Debug.LogError("Failed to load audio clip: AudioClip is null");
         }
     }
+
+    // Method to stop the audio
+    public void StopAudio()
+    {
+        audioSource.Stop();
+    }
+
+    // Method to pause the audio
+    public void PauseAudio()
+    {
+        audioSource.Pause();
+    }
+
+    // Method to resume the audio
+    public void ResumeAudio()
+    {
+        audioSource.UnPause();
+    }
 }

@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 9bffc6a97eb58e04c8d598630b92e82a
   - enabled: 1
+    path: Assets/Scenes/AviaoRings.unity
+    guid: 813e482ab60a94a78be71d946513da3a
+  - enabled: 1
     path: Assets/Scenes/Aviao.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/old_Helicopter.unity
+    guid: 9613ae94f815746ed93256fbdb91215d
+  - enabled: 1
+    path: Assets/Scenes/HeliRescue.unity
+    guid: 0862da867bf3849e19c2f85ff0d004ab
+  - enabled: 1
+    path: Assets/Scenes/HelicopterFreePlay.unity
+    guid: 0b1717889d4344de888ef0d5a938c48d
   m_configObjects: {}

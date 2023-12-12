@@ -9,6 +9,13 @@ TagManager:
   - ObjectDropper
   - Heliport
   - Box
+  - Propeller
+  - Wing
+  - pyramid
+  - plane
+  - pipe
+  - explosion
+  - rescue
   layers:
   - Default
   - TransparentFX

@@ -7,11 +7,14 @@ public class PlaneController : MonoBehaviour
 {
   [Header("Plane Stats")]
   [Tooltip("How much the throttle ramps up or down.")]
-  public float throttleIncrement = 0.01f;
+  public float throttleIncrement = 0.02f;
   [Tooltip("Maximum engine thrust when at 100% throttle.")]
   public float maxThrust = 75f;
   [Tooltip("How responsive the plane is when rolling, pitching and yawing.")]
-  public float responsiveness = 10f;
+  public float responsiveness = 20f; 
+
+    private Transform propeller;
+    private Animator animator; 
 
   [Tooltip("How much lift force the plane generates as it gains speed.")]
   public float lift = 50f;
@@ -33,9 +36,20 @@ public class PlaneController : MonoBehaviour
   [SerializeField] Transform propella;
 
   private void Awake()
-  {
-    rb = GetComponent<Rigidbody>();
-  }
+    {
+        rb = GetComponent<Rigidbody>();
+        // propeller = GameObject.FindGameObjectWithTag("Propeller").transform;
+        animator = GetComponentInChildren<Animator>(); // Use GetComponentInChildren if the Animator is a child
+
+        if (propeller == null)
+        {
+            Debug.LogError("Propeller not found. Make sure it has the 'Propeller' tag.");
+        }
+        if (animator == null)
+        {
+            Debug.LogError("Animator not found on the GameObject or its children.");
+        }
+    }
 
   private void HandleInputs()
   {
@@ -56,13 +70,18 @@ public class PlaneController : MonoBehaviour
     // throttle = Mathf.Clamp(throttle, 0f, 100f);
   }
 
-  private void Update()
-  {
-    HandleInputs();
-    UpdateHUD();
+    private void Update()
+    {
+        HandleInputs();
+        UpdateHUD();
+        RotatePropeller();
 
-    propella.Rotate(Vector3.right * throttle);
-  }
+        // Check for engine start input and trigger the animation
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StartEngineAnimation();
+        }
+    }
 
   private void FixedUpdate()
   {
@@ -85,4 +104,27 @@ public class PlaneController : MonoBehaviour
     hud.text += "Altitude: " + transform.position.y.ToString("F0") + " m";
   }
 
+  private void RotatePropeller()
+    {
+        if (propeller != null)
+        {
+            // Calculate rotation speed based on throttle
+            float rotationSpeed = throttle * 10f; // You can adjust the multiplier to control the rotation speed
+
+            // Rotate the propeller
+            propeller.Rotate(Vector3.forward, rotationSpeed * Time.deltaTime);
+        }
+    }
+
+
+   private void StartEngineAnimation()
+    {
+        if (animator != null)
+        {
+            // Trigger the "EngineOn" animation
+            animator.SetTrigger("EngineOn");
+        }
+    }
+
 }
+

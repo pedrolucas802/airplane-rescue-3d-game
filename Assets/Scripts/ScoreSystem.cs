@@ -1,59 +1,74 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 public class ScoreSystem : MonoBehaviour
 {
-    [SerializeField]private string MainMenu;
-    public TextMeshProUGUI scoreText; // Reference to the TextMeshProUGUI component for score display
-    private int score = 0; // Current score
-    private bool gameEnded = false; // Flag to indicate if the game has ended
+    [SerializeField] private string mainMenuSceneName; // Renamed to avoid confusion
 
-    public void UpdateScore()
+    public TextMeshProUGUI scoreText;
+    private int score = 0;
+    private bool gameEnded = false;
+    private float timerDuration = 540f; // 3 minutes in seconds
+
+   private void Update()
     {
-        // Increment the score
-        score++;
+        timerDuration -= Time.deltaTime;
 
-        // Update the score display
+        if (timerDuration < 2)
+        {
+            GameOver();
+        }
+        
         UpdateScoreText();
 
-        // Check if the score reaches 5
-        if (score == 5 && !gameEnded)
+        if (score > 5)
         {
-            // Call the game over function
-            SceneManager.LoadScene(MainMenu);
-            
+            WinGame();
         }
+        
+    }
+
+    public void UpdateScore(int addition)
+    {
+
+        score= score + addition;
+        Debug.Log("Score: "+ score);
+
     }
 
     private void UpdateScoreText()
     {
-        // Update the score text
-        scoreText.text = "Score: " + score.ToString();
+        int minutes = Mathf.FloorToInt(timerDuration / 60f);
+        int seconds = Mathf.FloorToInt(timerDuration % 60f);
+
+        string timeString = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        scoreText.text = "Time:" + timeString + " / Score: " + score;
     }
 
     private void GameOver()
     {
-        // Perform game over actions
         Debug.Log("Game Over");
-
-        // Set the gameEnded flag to true to prevent further execution of GameOver logic
+        scoreText.text = "Time Out!";
         gameEnded = true;
 
-        // Close the game
-        // Get the current active scene
-        Scene currentScene = SceneManager.GetActiveScene();
+        StartCoroutine(ReloadScene(0.5f));
+    }
 
-    // Close the current scene asynchronously
-        SceneManager.UnloadSceneAsync(currentScene);
+    private void WinGame()
+    {
+        Debug.Log("You Win!");
+        scoreText.text = "You Win!";
+        gameEnded = true;
 
-    // Load the main menu scene
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(ReloadSceneMainMenu(2.5f));
+
     }
 
     private void QuitGame()
     {
-        // Quit the application
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
         #else
@@ -63,7 +78,25 @@ public class ScoreSystem : MonoBehaviour
 
     private void Start()
     {
-        // Start a timer to call GameOver after 2 minutes
-        Invoke("GameOver", 600f);
+        InvokeRepeating("UpdateScoreText", 1.5f, 1.5f); // Invoke UpdateScore every second
     }
+
+    IEnumerator ReloadScene(float delay)
+    {
+        // Wait for the specified duration
+        yield return new WaitForSeconds(delay);
+
+        // Reload the current scene
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.name);
+    }
+
+    IEnumerator ReloadSceneMainMenu(float delay)
+{
+    // Wait for the specified duration
+    yield return new WaitForSeconds(delay);
+
+    // Reload the main menu scene
+    SceneManager.LoadScene(mainMenuSceneName);
+}
 }
