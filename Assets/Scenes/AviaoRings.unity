@@ -13930,10 +13930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1735158112}
   lines:
-  - 'Comandante: Passe pelos 6 aneis para complentar seu treinamento'
-  - "Lembre-se controlar o sistema de acelera\xE7\xE3o use Space ou 'B'"
-  - "Para direcionar o avi\xE3o use W,A,S,D"
-  - Cuidado com as montanhas!
+  - 'Passe pelos 6 aneis para complentar seu treinamento!'
   textSpeed: 0.3
 --- !u!1 &768794464
 GameObject:

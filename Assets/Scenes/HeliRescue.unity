@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.09666319, g: 0.3514195, b: 0.7147534, a: 1}
+  m_IndirectSpecularColor: {r: 0.0965606, g: 0.35120016, b: 0.7145682, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13573,7 +13573,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 391732540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -472.57, y: -90.8, z: -628.3}
+  m_LocalPosition: {x: -215, y: -90.8, z: -296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22145,10 +22145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1735158112}
   lines:
-  - 'Comandante: Passe pelos 6 aneis para complentar seu treinamento'
-  - "Lembre-se controlar o sistema de acelera\xE7\xE3o use Space ou 'B'"
-  - "Para direcionar o avi\xE3o use W,A,S,D"
-  - Cuidado com as montanhas!
+  - Resgate todos civis antes que eles morram!
   textSpeed: 0.3
 --- !u!1 &750552837
 GameObject:
@@ -50378,7 +50375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136476994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -512, y: -90.8, z: -628.3}
+  m_LocalPosition: {x: -814, y: -90.8, z: -517}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
